@@ -1,0 +1,20 @@
+Following changes have been made to the original:
+
+1. Created buttons to submit and clear forms, placement needs editing
+
+2. Started assigning names to Entry fields so that they can be referred to during templating
+
+3. Edited some blanks in Dakhila to have Jinja template formatting
+
+Changes that still need to be made:
+
+1. Need either more symbolic entry labels, or need to make sure order of blanks on the form and 
+order of entry fields matches up exactly
+
+2. Some way to make the "miti" fields clearer: ask person who has given the project?
+
+3. Obtain final versions of all forms and enter formatting syntax, implement entry field names
+for other form GUIs
+
+4. Split multi-page forms so that we have one window corresponding to one page, perhaps some way 
+to go from one to the next? A button or something?
