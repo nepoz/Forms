@@ -18,7 +18,7 @@
         .container {
             width: 700px;
             height: 1027px;
-            border: 2px #242323 solid;
+            
             padding: 10px;
             opacity: 1 !important;
             text-align: center;
@@ -444,39 +444,36 @@
                     <span style="font-size:1.4em;font-family:ArialNarrow2;">साँखु (काठमाण्डौ)</span>
                     <br>
                     <div class="date">
-                        <span style="position:absolute; left:550px;"> मिति: {{blank1}}</span>   <!--to the right-->
-                        <span style="position:absolute; left:20px;"> मिसिल नं. : {{blank2}} </span> <br>    <!--to the left-->
+                        <span style="position:absolute; left:550px;"> मिति: <span class="line4" id="miti">{{miti1}}</span>   </span>
+                        <span style="position:absolute; left:20px;"> मिसिल नं. :- <span class="line4" id="misil">{{misil}}</span><br> </span>
                     </div>
                     <span style="font-size:1.1em;font-family:ArialNarrow2;margin-left:-40px;display: flex; flex-direction: column;align-items: center;justify-content: space-between; margin-top: 30px;">
-                        <u> विषय :- दाखिल खारेज सम्बन्धि टिप्पणि तथा आदेशा । </u></span>
+                        <u> विषय :- दाखिल खारेज सम्बन्धि टिप्पणि तथा आदेश । </u></span>
                 </div>
-
-
             </div>
             <div class="content" style=" margin-bottom: 40px">
                 <div class="row">
                     <span>बादी / धनी म / हामी </span>
-                    <span class="line1">{{blank3}}</span>
-                    <span>ऋणी / प्रतिबादी </span>
-                    <span class="line2">{{blank4}}</span>
+                    <span class="line1" id="hami">{{hami}}</span> 
+                    <span> ऋणी / प्रतिबादी 
+                    <span class="line2" id="pratibadi">{{pratibadi}}</span> </span>
                 </div>
                 <div class="row">
-
-                    <span class="line3"></span><span> भएको र.नं. / चलान पुर्जी नं.</span>
-                    <span class="line4">{{blank5}}</span> <span>मिति</span><span class="line5"></span>
+                    <span> भएको र.नं. / चलान पुर्जी नं.</span>
+                    <span class="line4" id="chalan">{{chalan}}</span><span>मिति</span><span class="line5" id="miti2">{{miti2}}</span>
                     <span>को </span>
                 </div>
                 <div class="row">
-                    <span>मा.पो.का </span> <span class="line6"></span> <span>अदालतको पारित लिखित / फैसला बमोजिम मेरो /
+                    <span>मा.पो.का </span> <span class="line6" id="ma">{{ma}}</span> <span>अदालतको पारित लिखित / फैसला बमोजिम मेरो /
                     </span>
 
                 </div>
                 <div class="row">
-                    <span>हाम्रो नाममा दाखिल खारेज गरी पाउँ संलग्न प्रमाण साथको द.नं. </span><span class="line7"></span>
+                    <span>हाम्रो नाममा दाखिल खारेज गरी पाउँ संलग्न प्रमाण साथको द.नं. </span><span class="line7" id="darta">{{darta}}</span>
                     <span> मिति</span>
                 </div>
                 <div class="row">
-                    <span class="line9"></span>
+                    <span class="line9" id="miti3">{{miti3}}</span>
                     <span> को निवेदन ।</span>
                 </div>
             </div>
@@ -486,29 +483,19 @@
                         <tr>
                             <th>वादी निवेदकको नाम, थर, वतन (वारेस भए निजको समेत)</th>
                             <th>पिता वा पति</th>
-
-                            <th>बजे</th>
+                            <th>बाजे</th>
                             <th>कैफियत</th>
                         </tr>
-
                     </thead>
                     <tbody>
                         <tr th:each="shs: ${student.sortedSHS()}">
-                            <td>SUSHIL GHIMIRE</td>
-                            <td class="text-align-left">KOMAL SHANKAR GHIMIRE</td>
-                            <td>HARI SHANKAR GHIMIRE</td>
-                            <td>KOMAL SHANKAR GHIMIRE</td>
-
-
+                            <td id="naam">{{naam}}</td>
+                            <td class="text-align-left" id="naam2">{{pita}}</td>
+                            <td id="naam3">{{baaje}}</td>
+                            <td id="naam4"></td>
                         </tr>
-
-
-                        <tr>
-
-                        </tr>
-
-
-                        <!-- Second Table Start -->
+                    </tbody>
+                </table>
                         <table class="table1 table1-bordered">
                             <thead>
                                 <tr>
@@ -533,64 +520,32 @@
                                     
                                     <th style="border-top: 1px solid #151B54;">कि. नं.</th>
                                     <th style="border-top: 1px solid #151B54;"> क्षेत्रफल</th>
-                                    
-                                    
-                                    <!-- <th class="no-border-top"></th> -->
                                 </tr>
                             </thead>
                             <tbody style="border-left: 1px solid #151B54;">
                                 <tr>
-                                    <td>Sushil Ghimire</td>
-                                    <td>Manthali </td>
-                                    <td>00101-012</td>
-                                    <td>01254-585</td>
-                                    <td>Uttar</td>
-                                        <td>01225-54421</td>
-                                        <td> East</td>
-                                        <td>4545-454</td>
-                                        <td>35 aana 2 paisa</td>
-                                        <td>232327</td>
-                                       
-
+                                    <td id="naam5"></td>
+                                    <td id="gawisa"> </td>
+                                    <td id="wana"></td>
+                                    <td id="kina"></td>
+                                    <td id= "tarfa"></td>
+                                        <td id="kina2"></td>
+                                        <td id="chhetrafal"></td>
+                                        <td id="tarfa2"></td>
+                                        <td id="kina3"></td>
+                                        <td id="chhetrafal2"></td>
                                 </tr>
-                                <tr>
-                                        
-                                        
-     
-
-                                </tr>
-                                <tr>
-    
-                                </tr>
-                                <tr>
-                                        
-                                </tr>
-                                <tr>
-                                      
-                                </tr>
-                                <tr>
-
-                                </tr>
-                                <tr>
-
-                                </tr>
-                                <tr>
-
-                                </tr>
-                                <tr>
-
-                                </tr>
-                                <!-- Second table end -->
                             </tbody>
                         </table>
-
-
-
             </div>
+
             <a href="Dakhila2.html" style="text-decoration: none;">अर्को पत्र </a>
             <p style="page-break-after: always"><span></span></p>
         </div>
     </div>
+
+    <button onclick="myFunction()" style="font-size: 1.2em;">प्रिन्ट </button>
+
 </body>
 
 </html>

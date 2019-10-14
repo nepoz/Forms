@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Form4</title>
+		<style type="text/css">
+        table, th, td {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 20px;
+            border: 1px solid black;
+        }
+        body {
+            width: 100vw;
+            /*display: flex;*/
+
+        }
+        .container {
+            width: 700px;
+            height:950px;
+          
+            padding: 10px;
+            opacity: 1 !important;
+            /*background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><text x="4" y="4" font-size="4" fill="#bf9ef1">[[${municipalName.value}]]</text></svg>');*/
+            /*background-size: 70px 10px;*/
+
+            text-align: center;
+            flex-direction: column;
+            align-items: center;
+            font-family: arial;
+
+        }
+        .header {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        .content {
+            margin-top: 45px;
+        }
+        .content>div>span {
+            color: #000;
+        }   
+        .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: justify;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        .row span {
+            font-size: 0.8em;
+            text-transform: uppercase;
+        }
+        .line,
+        .line1,
+        .line2,
+        .line3,
+        .line4,
+        .line5,
+        .line6,
+        .line7,
+        .line8,
+        .line9 {
+            border-bottom: 1px #0a0a0a solid;
+            text-transform: none;
+            color: #000;
+        }
+
+        .line1 {
+            width: 26%;
+        }
+
+        .line2 {
+            width: 27.5%;
+        }
+
+        .line3 {
+            width: 31%;
+        }
+
+        .line4 {
+            width: 18%
+        }
+
+        .line5 {
+            width: 21%;
+        }
+
+        .line6 {
+            width: 51%;
+        }
+
+        .line7 {
+            width: 30%;
+        }
+
+        .line8 {
+            width: 25%;
+        }
+
+        .line9 {
+            width: 40%;
+        }
+        .heading>span {
+            color: #000;
+        }
+        .fifth .col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .fifth .col .line {
+            margin-bottom: 10px;
+        }
+
+        .fifth .col span {
+            margin-bottom: 5px;
+        }
+        .third {
+            width: 100%;
+            height: 430px;
+        }
+        th,
+        td {
+            font-size: 0.9em;
+            ;
+        }
+
+        .text-vertical {
+            text-orientation: mixed;
+            writing-mode: vertical-lr;
+        }
+
+        .text-align-left {
+            text-align: left;
+            padding-left: 2px;
+        }
+        .text-vertical {
+            text-orientation: mixed;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            padding-top: 5px;
+            text-align: center;
+            vertical-align: bottom;
+        }
+
+        .text-align-left {
+            text-align: start;
+            padding-left: 0px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .heading>span {
+            color: #000;
+        }
+
+        .content>div>span {
+            color: #000;
+        }
+
+        </style>
+	</head>
+
+	<body style=" padding-left: 20px; padding-right: 20px;" class="container">
+		<div class="header">
+			<img src="logo.svg" style="width: 120px; height: 110px; margin-right:70px;" alt="logo" class="col image">
+			<div style="margin-left:-40px;display: flex; flex-direction: column;align-items: center;justify-content: space-between; padding-right: 150px;" class="col heading">
+	            <span style="font-weight: bold;">नेपाल सरकार</span>
+	            <span style="font-weight: bold;">भूमि व्यवस्था सरकारी तथा गरिवी निवारण मन्‍न्नालय</span>
+	            <span style="font-weight: bold;">भूमि व्यवस्थापन तथा अभिलेख विभाग</span>
+	            <span style="font-size:1.8em;font-family:ArialNarrow2;font-weight: bold;">मालपोत कार्यालय</span>
+	            <span style="font-size:1.4em;font-family:ArialNarrow2;font-weight: bold;">साँखु (काठमाण्डौ)</span>
+	            <br>
+	            <br>
+                <div class="date">
+	            <span style="position:absolute; left:550px;"> मिति: <span class="line2" id="miti"></span></span>   
+	            <span style="position:absolute; left:20px;"> पत्र संख्या: <span class="line2" id="patra"></span></span> <br>   
+                <span style="position:absolute; left:20px;"> चलानी नं :- <span class="line2" id="chalan"></span> </span> 
+            </div>
+	            <span style="font-size:1.1em;font-family:ArialNarrow2;margin-left:-40px;display: flex; flex-direction: column;align-items: center;justify-content: space-between; margin-top: 30px; font-weight: bold;">
+	            <u> विषय :- नामसारीको टिप्पणी र आदेश</u> </span>
+	        </div>
+    	</div>
+
+		<div class="content" style=" margin-bottom: 40px">
+			<div class="row">
+				<span style="float: left;">श्रीमान्,</span>
+			</div>
+        	<div class="row">
+        		<span>मेरो / हाम्रा नाउमा दर्ता तपसिलमा उल्लेखित जग्गामा </span>
+                <span class="line1" id="jagga"></span>
+                <span>गरिपाऊ भनी</span>  
+        	</div>
+        	<div class="row">
+                <span class="line2" id="address"></span>
+                <span>बस्ने </span>
+             	<span class="line1" id="basne"></span>
+                <span>को द.नं </span>
+                <span class="line1" id="dana"></span>
+                <span>मिति</span> 
+            </div>
+            <div class="row">
+                <span class="line2" id="miti2"></span>
+                <span>को निवेदन माग।</span>
+            </div>
+
+            <div class="row">
+                <span>यसमा मिसिल सम्लग्न प्रमाण बमोजिम  </span>
+                <span class="line1" id="naam6"></span>
+                <span>को नाउमा दर्ता उल्लेखित जग्गामा </span>
+            </div>
+            <div class="row">
+                <span class="line1" id="jaggama"></span>
+                <span>हुने शुल्क वापत रू</span>
+                <span class="line2" id="paisa"></span>
+                <span>असुली पेश गरेको छु ।</span>
+            </div>
+            </br>
+            <div class="row">
+                <span>जो आदेश तपसिल</span>
+            </div>
+        </div>
+
+            <div>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>दर्ता वाला</th>
+                            <th> गा.वि.श/न.पा.</th>
+                            <th>वडा नं.</th>
+                            <th>कि .नं.</th>
+                            <th>क्षेत्रफल </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="naam"></td>
+                            <td class="text-align-left" id="gawisa"> </td>
+                            <td id="wada"> </td>
+                            <td id="kina"> </td>
+                            <td id="chhetrafal"> </td>
+                        </tr>
+                    </tbody>  
+                </table>
+            </div>
+
+        <div class="content" style=" margin-bottom: 40px">
+            <div class="row">
+                <span>संलग्न प्रमाण</span>
+            </div>
+            <div class="row">
+                <span>१) गा .वि .स / न .पा </span>
+                <span class="line3" id="gawisa2"></span>
+                <span> वडा नं </span>
+                <span class="line2" id="wada2"> </span>
+                <span>को च . नं </span>
+                
+            </div>
+            <div class="row">
+                <span class="line2" id="chana"></span>
+                <span>मिति </span>
+                <span class="line1" id="miti3"></span>
+                <span>को सिफारिस  ।</span>
+            </div>
+            <div class="row">
+                <span>२) जग्गा  पूर्जा ,</span>
+            </div>
+            <div class="row">
+                <span>३) मालपोत रसिद ,</span>
+            </div>
+            <div class="row">
+                <span>४) नागरिकता </span>
+            </div>
+        </div>
+
+        <button onclick="myFunction()" style="font-size: 1.2em;">प्रिन्ट </button>
+    </body>
+</html>
+		
