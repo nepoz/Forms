@@ -165,7 +165,6 @@ class DakhilaForm:
         ## ------------ BUTTONS --------------
 
         ## Will clear all the text boxes.
-        clear_form_button(self.window, self.entry_fields).place(x=650, y=480)        ## I leave it to you to decide where the actual placement of this button should be
-
+        clear_form_button(self.window, self.entry_fields).place(x=650, y=480)
         ## Will render completed html form and open it in default web browser, new tab
         submit_form_button(self.window, self.entry_fields, 'Dakhila.html').place(x=700, y=480)

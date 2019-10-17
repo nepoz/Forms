@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 from FormUtils import available_forms
 from Dakhila import DakhilaForm
+from Trial import TrialForm
 
 class Main:
 
@@ -37,11 +38,18 @@ class Main:
 
     def launch_form(self):
         form_option = self.dropdown.get()
-        print(form_option)
 
         self.newWin = tk.Toplevel(self.root)
-        self.newWin.geometry("900x800")
-        self.now = DakhilaForm(self.newWin)
+
+        ##Different opening sequences depending on selected form
+        if (form_option == "Dakhila"):
+            self.newWin.geometry("900x800")
+            self.newWin.title("दाखिल")
+            self.now = DakhilaForm(self.newWin)
+        elif (form_option == "Trial"):
+            self.newWin.geometry("850x500")
+            self.newWin.title("ट्रायल")
+            self.now = TrialForm(self.newWin)
 
 root = tk.Tk()
 root.title("Forms")
