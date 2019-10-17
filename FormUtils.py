@@ -10,6 +10,21 @@ env = Environment(
     autoescape=select_autoescape(['html','xml'])
 )
 
+
+## ------------ GLOBAL VARS -------------
+available_forms = [
+    "Dakhila",
+    "Naamsaari",
+    "Trial",
+    "Option 1",
+    "Option 2",
+    "Option 3",
+    "Option 4",
+    "Option 5"
+]
+
+
+##  -------HELPER FUNCTIONS-------
 '''
 Helper method to clear all text fields on a form.
 Assume entry_fields is an iterable with all Text Field objects
@@ -30,7 +45,9 @@ def submit_form(entry_fields, form_template):
     form_entries = {}
 
     for text_box in entry_fields:
-        form_entries[str(text_box)[1:]] = text_box.get()
+        hierarchy = str(text_box).split('.')
+        entry_id = hierarchy[len(hierarchy) - 1]
+        form_entries[entry_id] = text_box.get()
 
     template = env.get_template(form_template)
     clear_form(entry_fields)
