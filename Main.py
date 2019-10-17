@@ -40,7 +40,7 @@ class Main:
         print(form_option)
 
         self.newWin = tk.Toplevel(self.root)
-        self.newWin.geometry("800x800")
+        self.newWin.geometry("900x800")
         self.now = DakhilaForm(self.newWin)
 
 root = tk.Tk()
