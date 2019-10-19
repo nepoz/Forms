@@ -3,6 +3,7 @@ from tkinter import ttk
 from FormUtils import available_forms
 from Dakhila import DakhilaForm
 from Trial import TrialForm
+from Naamsaari import NaamsaariForm
 from Form4 import Form4
 
 class Main:
@@ -11,12 +12,31 @@ class Main:
         self.root = root
         self.frame = tk.Frame(self.root, padx=5, pady=5)
 
+        ##### GOVT HEADER ##########
+        self.header_frame = tk.Frame(self.frame, padx=5, pady=5)
+        
+        self.header_line1 = tk.Label(self.header_frame, text="नेपाल सरकार", font=("bold", 15))
+        self.header_line2 = tk.Label(self.header_frame, text="भूमि व्यवस्था सरकारी तथा गरिवी निवारण मन्‍न्नालय", font=("bold", 15))
+        self.header_line3 = tk.Label(self.header_frame, text="भूमि व्यवस्थापन तथा अभिलेख विभाग", font=("bold", 15))
+        self.header_line4 = tk.Label(self.header_frame, text="मालपोत कार्यालय", font=("bold", 15))
+        self.header_line5 = tk.Label(self.header_frame, text="साँखु (काठमाण्डौ)", font=("bold", 15))
+
+        self.header_line1.grid(row=0, column=1, sticky="EW")
+        self.header_line2.grid(row=1, column=1, sticky="EW")
+        self.header_line3.grid(row=2, column=1, sticky="EW")
+        self.header_line4.grid(row=3, column=1, sticky="EW")
+        self.header_line5.grid(row=4, column=1, sticky="EW")
+
+        self.header_frame.pack(side=tk.TOP)
+
+        ##### END GOVT HEADER ##########
+        
         self.title_label = tk.Label (
             self.frame, 
-            text="Please select a form",
-            font=("bold", 40), 
-            padx=5, 
-            pady=5
+            text="तपाई कुन फारम भर्ना चाहनु हुन्छ?",
+            font=("bold", 20), 
+            padx=10, 
+            pady=10
         )
         self.title_label.pack(side=tk.TOP)
 
@@ -27,7 +47,7 @@ class Main:
         self.button_frame = tk.Frame(self.frame, padx=5, pady=10)
         self.submit_button = tk.Button (
             self.button_frame, 
-            text="Launch", 
+            text="Next", 
             font=("Arial", 14),
             relief=tk.GROOVE,
             command=self.launch_form
@@ -43,21 +63,25 @@ class Main:
         self.newWin = tk.Toplevel(self.root)
 
         ##Different opening sequences depending on selected form
-        if (form_option == "Dakhila"):
+        if (form_option == "दाखिल"):
             self.newWin.geometry("900x800")
             self.newWin.title("दाखिल")
             self.now = DakhilaForm(self.newWin)
-        elif (form_option == "Trial"):
+        elif (form_option == "ट्रायल"):
             self.newWin.geometry("850x500")
             self.newWin.title("ट्रायल")
             self.now = TrialForm(self.newWin)
+        elif(form_option == "नामसारी"):
+            self.newWin.geometry("850x750")
+            self.newWin.title("नामसारी")
+            self.now = NaamsaariForm(self.newWin)
         else:
             self.newWin.geometry("850x600")
             self.newWin.title(form_option)
             self.now = Form4(self.newWin, form_option)
 
 root = tk.Tk()
-root.title("Forms")
+root.title("फारम")
 
 main_window = Main(root)
 root.mainloop()

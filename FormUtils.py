@@ -13,14 +13,14 @@ env = Environment(
 
 ## ------------ GLOBAL VARS -------------
 available_forms = [
-    "Dakhila",
-    "Naamsaari",
-    "Trial",
-    "Option 1",
-    "Option 2",
-    "Option 3",
-    "Option 4",
-    "Option 5"
+    "दाखिल",
+    "नामसारी",
+    "ट्रायल",
+    "संशोधन",
+    "प्रतिलिपी",
+    "फोटोटास",
+    "घर कायम",
+    "तिनपुस्ते कायम"
 ]
 
 
