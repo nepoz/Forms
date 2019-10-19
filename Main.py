@@ -78,6 +78,7 @@ class Main:
         form_option = self.dropdown.get()
 
         self.newWin = tk.Toplevel(self.root)
+        self.newWin.iconbitmap('favicon.ico')
 
         ##Different opening sequences depending on selected form
         if (form_option == "दाखिल"):
@@ -99,6 +100,7 @@ class Main:
 
 root = tk.Tk()
 root.title("फारम")
+root.iconbitmap("favicon.ico")
 
 main_window = Main(root)
 root.mainloop()
