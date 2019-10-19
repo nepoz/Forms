@@ -89,7 +89,7 @@ class Main:
             self.newWin.title("ट्रायल")
             self.now = TrialForm(self.newWin)
         elif(form_option == "नामसारी"):
-            self.newWin.geometry("850x750")
+            self.newWin.geometry("850x900")
             self.newWin.title("नामसारी")
             self.now = NaamsaariForm(self.newWin)
         else:

@@ -127,7 +127,7 @@ class NaamsaariForm:
         ##end of table
 
 
-        self.lbl16 = Label(self.window, text= "संलग्न प्रमाणहरु: ", font =("Ganesh",12))
+        self.lbl16 = Label(self.window, text= "संलग्न प्रमाणहरु: ", font =("Ganesh",15))
         self.lbl16.place(x= 10, y = 450)
 
         self.lbl17 = Label(self.window, text="च .नं.: ",font = ("Ganesh",12))
@@ -165,7 +165,61 @@ class NaamsaariForm:
         self.txt23 = Entry(self.window, width=25, name="gawisa2")
         self.txt23.place(x = 650, y=540)
 
-        self.entry_fields = [
+        ### PAGE 2 ###
+        self.second_page_label = Label(self.window, text="दोस्रो पाना: ", font=("Ganesh", 15))
+        self.second_page_label.place(x=10, y=620)
+
+        self.lbl24 = Label(self.window, text="द. नं: ", font=("Ganesh", 12))
+        self.lbl24.place(x=10, y=650)
+        self.txt24 = Entry(self.window, width=25, name="dana2")
+        self.txt24.place(x=70, y=650)
+
+        self.lbl25 = Label(self.window, text="मिति: ", font=("Ganesh", 12))
+        self.lbl25.place(x=10, y=680)
+        self.txt25 = Entry(self.window, width=25, name="miti6")
+        self.txt25.place(x=70, y=680)
+
+        self.lbl26 = Label(self.window, text="वडा.नं: ", font=("Ganesh", 12))
+        self.lbl26.place(x=10, y=710)
+        self.txt26 = Entry(self.window, width=25, name="wada3")
+        self.txt26.place(x=70, y=710)
+
+        self.lbl27 = Label(self.window, text="मालपोत बुझाएको नं: ", font=("Ganesh", 12))
+        self.lbl27.place(x=10, y=740)
+        self.txt27 = Entry(self.window, width=25, name="malpot")
+        self.txt27.place(x=150, y=740)
+
+        self.lbl28 = Label(self.window, text="मिति: ", font=("Ganesh", 12))
+        self.lbl28.place(x=10, y=770)
+        self.txt28 = Entry(self.window, width=25, name="miti7")
+        self.txt28.place(x=70, y=770)
+
+        self.lbl29 = Label(self.window, text="सार्वजनिक सूचना प्रकाशन मिति: ", font=("Ganesh", 12))
+        self.lbl29.place(x=425, y=650)
+        self.txt29 = Entry(self.window, width=25, name="prakashan")
+        self.txt29.place(x=650, y=650)
+
+        self.lbl30 = Label(self.window, text="हकदार मध्ये: ", font=("Ganesh", 12))
+        self.lbl30.place(x=520, y=680)
+        self.txt30 = Entry(self.window, width=25, name="hakdar")
+        self.txt30.place(x=650, y=680)
+
+        self.lbl31 = Label(self.window, text="द.नं : ", font=("Ganesh", 12))
+        self.lbl31.place(x=575, y=710)
+        self.txt31 = Entry(self.window, width=25, name="dana3")
+        self.txt31.place(x=650, y=710)
+
+        self.lbl32 = Label(self.window, text="मिति: ", font=("Ganesh", 12))
+        self.lbl32.place(x=575, y=740)
+        self.txt32 = Entry(self.window, width=25, name="miti8")
+        self.txt32.place(x=650, y=740)
+
+        self.lbl33 = Label(self.window, text="मिसिल नं. : ", font=("Ganesh", 12))
+        self.lbl33.place(x=550, y=770)
+        self.txt33 = Entry(self.window, width=25, name="misil2")
+        self.txt33.place(x=650, y=770)
+
+        self.entry_fields_first_page = [
             self.txtDate, 
             self.txtM, 
             self.txt1, 
@@ -192,12 +246,38 @@ class NaamsaariForm:
             self.txt23
         ]
 
+        self.entry_fields_second_page = [
+            self.txt24,
+            self.txt25,
+            self.txt26,
+            self.txt27,
+            self.txt28,
+            self.txt29,
+            self.txt30,
+            self.txt31,
+            self.txt32,
+            self.txt33
+        ]
+
+        self.all_entry_fields = self.entry_fields_first_page + self.entry_fields_second_page
+
+        self.template_and_fields = [
+            {
+                'template' : 'Naamsaari.html',
+                'entry_fields' : self.entry_fields_first_page
+            },
+            {
+                'template' : 'Naamsaari2.html',
+                'entry_fields' : self.entry_fields_second_page
+            }
+        ]
+
 
 ##end of labels and textboxes
 
 ##### BUTTONS ############
-        self.clear_form_button = clear_form_button(self.window, self.entry_fields)
-        self.clear_form_button.place(x=650, y=575)
+        self.clear_form_button = clear_form_button(self.window, self.all_entry_fields)
+        self.clear_form_button.place(x=650, y=800)
 
-        self.submit_form_button = submit_form_button(self.window, self.entry_fields, "Naamsaari.html")
-        self.submit_form_button.place(x=700, y=575)
+        self.submit_form_button = submit_form_button(self.window, self.template_and_fields)
+        self.submit_form_button.place(x=700, y=800)
