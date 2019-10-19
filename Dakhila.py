@@ -154,7 +154,30 @@ class DakhilaForm:
         self.txt21 = Entry(self.window, width=25, name="chhetrafal2")
         self.txt21.place(x=650, y=450)
 
-        self.entry_fields = [
+        self.second_page_title = Label(self.window, text="दोस्रो पाना: ", font=("Ganesh", 15))
+        self.second_page_title.place(x=10, y=530)
+
+        self.lbl22 = Label(self.window, text='मा.पो.का.: ', font=("Ganesh", 12))
+        self.lbl22.place(x=10, y=580)
+        self.txt22 = Entry(self.window, width=25, name="ma2")
+        self.txt22.place(x=110, y=580)
+
+        self.lbl23 = Label(self.window, text=" र नं: ", font=("Ganesh", 12))
+        self.lbl23.place(x=10, y=610)
+        self.txt23 = Entry(self.window, width=25, name="rana")
+        self.txt23.place(x=110, y=610)
+
+        self.lbl24 = Label(self.window, text="अदालतको च.नं.: ", font=("Ganesh", 12))
+        self.lbl24.place(x=550, y=580)
+        self.txt24 = Entry(self.window, width=25, name="adalat")
+        self.txt24.place(x=660, y=580)
+
+        self.lbl25 = Label(self.window, text="मिति: ", font=("Ganesh", 12))
+        self.lbl25.place(x=550, y=610)
+        self.txt25 = Entry(self.window, width=25, name="miti4")
+        self.txt25.place(x=620, y=610)
+
+        self.entry_fields_first_page = [
             self.txtDate, 
             self.txtM, 
             self.txt1, 
@@ -180,9 +203,28 @@ class DakhilaForm:
             self.txt21
         ]
 
+        self.entry_fields_second_page = [
+            self.txt22,
+            self.txt23,
+            self.txt24,
+            self.txt25
+        ]
+
+        self.all_entry_fields = self.entry_fields_first_page + self.entry_fields_second_page
+
+        self.template_and_fields = [
+            {
+                'template' : 'Dakhila.html',
+                'entry_fields' : self.entry_fields_first_page
+            },
+            {
+                'template' : 'Dakhila2.html',
+                'entry_fields' : self.entry_fields_second_page
+            }
+        ]
         ## ------------ BUTTONS --------------
 
         ## Will clear all the text boxes.
-        clear_form_button(self.window, self.entry_fields).place(x=650, y=480)
+        clear_form_button(self.window, self.all_entry_fields).place(x=650, y=650)
         ## Will render completed html form and open it in default web browser, new tab
-        submit_form_button(self.window, self.entry_fields, 'Dakhila.html').place(x=700, y=480)
+        submit_form_button(self.window, self.template_and_fields).place(x=700, y=650)
