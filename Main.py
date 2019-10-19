@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
+from PIL import Image, ImageTk
 from FormUtils import available_forms
 from Dakhila import DakhilaForm
 from Trial import TrialForm
@@ -12,11 +13,27 @@ class Main:
         self.root = root
         self.frame = tk.Frame(self.root, padx=5, pady=5)
 
+        ##### NEPAL GOV LOGO #######
+        self.image_frame1 = tk.Frame(self.frame)
+        self.image_frame2 = tk.Frame(self.frame)
+
+        self.logo_path = "Forms/static/images/Nepal.png"
+        self.logoimg = ImageTk.PhotoImage(Image.open(self.logo_path).resize((128, 128)))
+
+        self.img1 = tk.Label(self.image_frame1, image=self.logoimg)
+        self.img2 = tk.Label(self.image_frame2, image=self.logoimg)
+
+        self.img1.pack()
+        self.img2.pack()
+        
+        self.image_frame1.pack(side=tk.LEFT, anchor="nw")
+        self.image_frame2.pack(side=tk.RIGHT, anchor="ne")
+
         ##### GOVT HEADER ##########
-        self.header_frame = tk.Frame(self.frame, padx=5, pady=5)
+        self.header_frame = tk.Frame(self.frame, pady=5)
         
         self.header_line1 = tk.Label(self.header_frame, text="नेपाल सरकार", font=("bold", 15))
-        self.header_line2 = tk.Label(self.header_frame, text="भूमि व्यवस्था सरकारी तथा गरिवी निवारण मन्‍न्नालय", font=("bold", 15))
+        self.header_line2 = tk.Label(self.header_frame, text="भूमि व्यवस्था सरकारी तथा गरिवी निवारण मन्‍न्नालय", font=("bold", 15), padx=10)
         self.header_line3 = tk.Label(self.header_frame, text="भूमि व्यवस्थापन तथा अभिलेख विभाग", font=("bold", 15))
         self.header_line4 = tk.Label(self.header_frame, text="मालपोत कार्यालय", font=("bold", 15))
         self.header_line5 = tk.Label(self.header_frame, text="साँखु (काठमाण्डौ)", font=("bold", 15))
@@ -33,7 +50,7 @@ class Main:
         
         self.title_label = tk.Label (
             self.frame, 
-            text="तपाई कुन फारम भर्ना चाहनु हुन्छ?",
+            text="तपाई कुन फारम भर्न चाहनु हुन्छ?",
             font=("bold", 20), 
             padx=10, 
             pady=10

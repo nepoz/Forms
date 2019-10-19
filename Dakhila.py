@@ -1,11 +1,29 @@
 from tkinter import *
 from FormUtils import clear_form_button, submit_form_button
+from PIL import Image, ImageTk
 
 
 class DakhilaForm:
 
     def __init__(self, main):
         self.window = main
+
+        ##### NEPAL GOV LOGO #######
+        self.image_frame1 = Frame(self.window)
+        self.image_frame2 = Frame(self.window)
+
+        self.logo_path = "Forms/static/images/Nepal.png"
+        self.logoimg = ImageTk.PhotoImage(Image.open(self.logo_path).resize((128, 128)))
+
+        self.img1 = Label(self.image_frame1, image=self.logoimg)
+        self.img2 = Label(self.image_frame2, image=self.logoimg)
+
+        self.img1.pack()
+        self.img2.pack()
+        
+        self.image_frame1.pack(side=LEFT, anchor="nw")
+        self.image_frame2.pack(side=RIGHT, anchor="ne")
+        ##### END OF IMAGE FRAMES
 
         ##start of header section
         self.header = Label(self.window, text= "नेपाल सरकार", font=("bold",15))

@@ -1,5 +1,6 @@
 from tkinter import *
 from FormUtils import submit_form_button, clear_form_button
+from PIL import Image, ImageTk
 
 
 class NaamsaariForm:
@@ -7,6 +8,23 @@ class NaamsaariForm:
     def __init__(self, main):
         self.window = main
         
+        ##### NEPAL GOV LOGO #######
+        self.image_frame1 = Frame(self.window)
+        self.image_frame2 = Frame(self.window)
+
+        self.logo_path = "Forms/static/images/Nepal.png"
+        self.logoimg = ImageTk.PhotoImage(Image.open(self.logo_path).resize((128, 128)))
+
+        self.img1 = Label(self.image_frame1, image=self.logoimg)
+        self.img2 = Label(self.image_frame2, image=self.logoimg)
+
+        self.img1.pack()
+        self.img2.pack()
+        
+        self.image_frame1.pack(side=LEFT, anchor="nw")
+        self.image_frame2.pack(side=RIGHT, anchor="ne")
+        ##### END OF IMAGE FRAMES
+
         ##start of header section
         header = Label(self.window, text= "नेपाल सरकार", font=("bold",15))
         header.place(x=400, y=10)
@@ -18,8 +36,6 @@ class NaamsaariForm:
         header4.place(x= 390, y=85)
         header5 = Label(self.window, text="साँखु (काठमाण्डौ)", font=("bold",15))
         header5.place(x= 390, y=110)
-        print ("\n")
-        print ("\n")
         ##end of header section
 
         ##labels and textboxes
