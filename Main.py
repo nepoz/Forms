@@ -3,6 +3,7 @@ from tkinter import ttk
 from FormUtils import available_forms
 from Dakhila import DakhilaForm
 from Trial import TrialForm
+from Form4 import Form4
 
 class Main:
 
@@ -50,6 +51,10 @@ class Main:
             self.newWin.geometry("850x500")
             self.newWin.title("ट्रायल")
             self.now = TrialForm(self.newWin)
+        else:
+            self.newWin.geometry("850x600")
+            self.newWin.title(form_option)
+            self.now = Form4(self.newWin, form_option)
 
 root = tk.Tk()
 root.title("Forms")

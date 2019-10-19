@@ -40,14 +40,18 @@ Helper method to collect all the entries made in the
 Entry fields. Will be the information used to complete
 the appropriate form.
 '''
-def submit_form(entry_fields, form_template):
+def submit_form(entry_fields, form_template, **kwargs):
     ## This dictionary will hold form entries in the format "nth_blank" : "data_to_be_entered"
     form_entries = {}
+    bisaya = kwargs.get('bisaya', None)
 
     for text_box in entry_fields:
         hierarchy = str(text_box).split('.')
         entry_id = hierarchy[len(hierarchy) - 1]
         form_entries[entry_id] = text_box.get()
+
+    if (bisaya):
+        form_entries['bisaya'] = bisaya
 
     template = env.get_template(form_template)
     clear_form(entry_fields)
@@ -67,11 +71,13 @@ Generates submit button that will fill out
 template form and then clears the fields
 that have been filled.
 '''
-def submit_form_button(master, entry_fields, form_template):
+def submit_form_button(master, entry_fields, form_template, **kwargs):
+    bisaya = kwargs.get('bisaya', None)
+    
     return Button(
         master=master,
         text="Submit Form",
-        command=lambda: submit_form(entry_fields, form_template)
+        command=lambda: submit_form(entry_fields, form_template, bisaya=bisaya)
     )
 
 '''
