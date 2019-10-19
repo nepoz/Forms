@@ -95,6 +95,13 @@ class TrialForm:
             self.txt7
         ]
 
+        self.template_and_fields = [
+            {
+                'template' : 'Trial.html',
+                'entry_fields' : self.entry_fields
+            }
+        ]
+
         #### BUTTONS #####
         clear_form_button(self.window, self.entry_fields).place(x=650, y=270)
-        submit_form_button(self.window, self.entry_fields, "Trial.html").place(x=700, y=270)
+        submit_form_button(self.window, self.template_and_fields).place(x=700, y=270)

@@ -167,10 +167,17 @@ class Form4:
             self.txt18
         ]
 
+        self.template_and_fields = [
+            {
+                'template' : 'Form4.html',
+                'entry_fields' : self.entry_fields
+            }
+        ]
+
         
         ## ------------ BUTTONS --------------
 
         ## Will clear all the text boxes.
         clear_form_button(self.window, self.entry_fields).place(x=650, y=520)
         ## Will render completed html form and open it in default web browser, new tab
-        submit_form_button(self.window, self.entry_fields, 'Form4.html', bisaya=self.option).place(x=700, y=520)
+        submit_form_button(self.window, self.template_and_fields, bisaya=self.option).place(x=700, y=520)
