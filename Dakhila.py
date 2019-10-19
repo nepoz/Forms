@@ -167,15 +167,20 @@ class DakhilaForm:
         self.txt23 = Entry(self.window, width=25, name="rana")
         self.txt23.place(x=110, y=610)
 
-        self.lbl24 = Label(self.window, text="अदालतको च.नं.: ", font=("Ganesh", 12))
-        self.lbl24.place(x=550, y=580)
-        self.txt24 = Entry(self.window, width=25, name="adalat")
-        self.txt24.place(x=660, y=580)
+        self.lbl24 = Label(self.window, text="प्रतिलिपि: ", font=("Ganesh", 12))
+        self.lbl24.place(x=10, y=640)
+        self.txt24 = Entry(self.window, width=25, name="pratilipi")
+        self.txt24.place(x=110, y=640)
+        
+        self.lbl25 = Label(self.window, text="अदालतको च.नं.: ", font=("Ganesh", 12))
+        self.lbl25.place(x=550, y=580)
+        self.txt25 = Entry(self.window, width=25, name="adalat")
+        self.txt25.place(x=660, y=580)
 
-        self.lbl25 = Label(self.window, text="मिति: ", font=("Ganesh", 12))
-        self.lbl25.place(x=550, y=610)
-        self.txt25 = Entry(self.window, width=25, name="miti4")
-        self.txt25.place(x=620, y=610)
+        self.lbl26 = Label(self.window, text="मिति: ", font=("Ganesh", 12))
+        self.lbl26.place(x=550, y=610)
+        self.txt26 = Entry(self.window, width=25, name="miti4")
+        self.txt26.place(x=620, y=610)
 
         self.entry_fields_first_page = [
             self.txtDate, 
@@ -207,7 +212,8 @@ class DakhilaForm:
             self.txt22,
             self.txt23,
             self.txt24,
-            self.txt25
+            self.txt25,
+            self.txt26
         ]
 
         self.all_entry_fields = self.entry_fields_first_page + self.entry_fields_second_page
