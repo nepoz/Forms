@@ -8,7 +8,7 @@ Clone into the repository using git on command line:
 
 ```git clone https://github.com/nepoz/Forms.git```
 
-!FROM WITHIN THE DIRECTORY WHICH HOLDS REPO FIILES:
+**FROM WITHIN THE DIRECTORY WHICH HOLDS REPO FIILES:
 
 Download all dependencies using pip:
 
