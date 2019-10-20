@@ -3,7 +3,19 @@
 	<head>
 		<title>दाखिल २</title>
 		<style type="text/css">
-			.content {
+			
+        @media print
+        {    
+            .no-print, .no-print *
+            {
+                display: none !important;
+            }
+        }
+
+        @page { size: auto;  margin: 0mm; }       
+      
+            
+        .content {
             margin-top: 45px;
         }
         .content>div>span {
@@ -206,6 +218,6 @@
             </div>
         </div>
 
-        <button onclick="myFunction()" style="font-size: 1.2em;">प्रिन्ट </button>
+        <button onclick=window.print() class="no-print" style="font-size: 1.2em;">प्रिन्ट </button>
 	</body>
 </html>

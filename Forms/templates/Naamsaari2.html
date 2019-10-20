@@ -6,6 +6,17 @@
 		body{
 			width:60%;;
 		}
+
+		@media print
+        {    
+            .no-print, .no-print *
+            {
+                display: none !important;
+            }
+        }
+
+        @page { size: auto;  margin: 0mm; }       
+  
 		.container{
 			width:700px;
 		}
@@ -219,6 +230,6 @@
 	            	<span class="line7"></span>
 	            </div>
 
-	            <button onclick="myFunction()" style="font-size: 1.2em;">प्रिन्ट </button>
+	            <button onclick=window.print() class="no-print" style="font-size: 1.2em;">प्रिन्ट </button>
 	</body>
 </html>

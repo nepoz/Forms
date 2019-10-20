@@ -9,6 +9,17 @@
             /*display: flex;*/
 
         }
+
+        @media print
+        {    
+            .no-print, .no-print *
+            {
+                display: none !important;
+            }
+        }
+
+        @page { size: auto;  margin: 0mm; }       
+  
         .container {
             width: 700px;
             height: 1027px;
@@ -192,7 +203,8 @@
 			</div>
 			<br>
 			
-		</div>
-
+        </div>
+        
+        <button onclick=window.print() class="no-print" style="font-size: 1.2em;">प्रिन्ट </button>
 	</body>
 </html>

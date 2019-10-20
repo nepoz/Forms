@@ -16,6 +16,17 @@
             /*display: flex;*/
 
         }
+
+
+        @media print
+        {    
+            .no-print, .no-print *
+            {
+                display: none !important;
+            }
+        }
+
+        @page { size: auto;  margin: 0mm; }       
   
         .container {
             width: 700px;
@@ -287,7 +298,6 @@
 				<u><b>क्रमष</b></u>
             </span></div>
             <br><br>
-            <button onclick="myFunction()" style="font-size: 1.2em;">प्रिन्ट </button>
+            <button onclick=window.print() class="no-print" style="font-size: 1.2em;">प्रिन्ट </button>
 	</body>
-	<a href="Naamsaari2.html" style="text-decoration: none;">अर्को पत्र </a>
 </html>

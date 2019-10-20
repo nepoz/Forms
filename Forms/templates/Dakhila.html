@@ -15,6 +15,17 @@
 
         }
 
+        @media print
+        {    
+            .no-print, .no-print *
+            {
+                display: none !important;
+            }
+        }
+
+        @page { size: auto;  margin: 0mm; }       
+  
+
         .container {
             width: 700px;
             height: 1027px;
@@ -539,13 +550,10 @@
                         </table>
             </div>
 
-            <a href="Dakhila2.html" style="text-decoration: none;">अर्को पत्र </a>
             <p style="page-break-after: always"><span></span></p>
         </div>
     </div>
-
-    <button onclick="myFunction()" style="font-size: 1.2em;">प्रिन्ट </button>
-
+    <button onclick=window.print() class="no-print" style="font-size: 1.2em;">प्रिन्ट </button>
 </body>
 
 </html>
