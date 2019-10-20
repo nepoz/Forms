@@ -3,6 +3,7 @@ from jinja2 import Environment, PackageLoader, select_autoescape
 import webbrowser
 import tempfile
 import os
+from pprint import pprint
 
 ## Setup the environment used by Jinja to find html templates
 env = Environment(
@@ -23,7 +24,7 @@ available_forms = [
     "तिनपुस्ते कायम"
 ]
 
-logo_path = os.getcwd() + '/Forms/static/images/logo.svg'
+logo_path=f"{os.getcwd()}/Forms/static/images/logo.svg".replace(' ', "%20")
 
 
 ##  -------HELPER FUNCTIONS-------
@@ -61,6 +62,7 @@ def submit_form(fields_templates, **kwargs):
                 form_entries['bisaya'] = bisaya
 
         template = env.get_template(pair['template'])
+        pprint(form_entries)
         clear_form(pair['entry_fields'])
         
         rendered_form = template.render(form_entries).encode("utf-8")
